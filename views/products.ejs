@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8">
+    <div class="flex justify-between items-center mb-4">
+        <h1 class="text-2xl font-bold">Product List</h1>
+        <a href="/" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add New Product</a>
+    </div>
+    <table class="table-auto w-full bg-white shadow-lg rounded-lg">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="px-4 py-2">Name</th>
+                <th class="px-4 py-2">Price</th>
+                <th class="px-4 py-2">Category</th>
+                <th class="px-4 py-2">Description</th>
+                <th class="px-4 py-2">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product=> { %>
+                <tr class="border-t">
+                    <td class="px-4 py-2">
+                        <%= product.name %>
+                    </td>
+                    <td class="px-4 py-2">
+                        <%= product.price %>
+                    </td>
+                    <td class="px-4 py-2">
+                        <%= product.category %>
+                    </td>
+                    <td class="px-4 py-2">
+                        <%= product.description %>
+                    </td>
+                    <td class="px-4 py-2">
+                        <img src="<%= product.imageUrl %>" alt="Image" class="h-32">
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>
